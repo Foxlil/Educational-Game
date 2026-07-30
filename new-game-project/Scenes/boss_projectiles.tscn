@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://kbtmyc156dxd"]
+
+[ext_resource type="Script" uid="uid://jc7w2sjkjqb6" path="res://Scripts/boss_projectiles.gd" id="1_jw0h5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3vw4"]
+radius = 120.41595
+
+[node name="Boss projectiles" type="CharacterBody2D" unique_id=1748536528]
+script = ExtResource("1_jw0h5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=397005377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=493538253]
+shape = SubResource("CircleShape2D_k3vw4")
+
+[node name="Slow_down" type="Timer" parent="." unique_id=349151291]
+wait_time = 0.25
+ignore_time_scale = true
+
+[node name="Till_speed_up" type="Timer" parent="." unique_id=1992119258]
+wait_time = 2.0
+ignore_time_scale = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1234156635]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=197815679]
+offset_left = -106.0
+offset_top = -73.0
+offset_right = 106.0
+offset_bottom = 71.0
+text = "hi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Slow_down" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Till_speed_up" to="." method="_on_till_speed_up_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

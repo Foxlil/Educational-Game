@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://drdb4k6py1dg6"]
+
+[ext_resource type="Script" uid="uid://bmnqkoypqg5oh" path="res://Scenes/big_boss.gd" id="1_wenfl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
+radius = 258.0
+height = 748.0
+
+[node name="Big boss" type="CharacterBody2D" unique_id=669045473]
+script = ExtResource("1_wenfl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=257206601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1876074794]
+shape = SubResource("CapsuleShape2D_k3vw4")
+
+[node name="Firing position" type="Node2D" parent="." unique_id=1825382580]
