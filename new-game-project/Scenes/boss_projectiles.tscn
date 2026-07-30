@@ -15,10 +15,12 @@ shape = SubResource("CircleShape2D_k3vw4")
 
 [node name="Slow_down" type="Timer" parent="." unique_id=349151291]
 wait_time = 0.25
+one_shot = true
 ignore_time_scale = true
 
 [node name="Till_speed_up" type="Timer" parent="." unique_id=1992119258]
 wait_time = 2.0
+one_shot = true
 ignore_time_scale = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1234156635]
@@ -28,10 +30,12 @@ offset_left = -106.0
 offset_top = -73.0
 offset_right = 106.0
 offset_bottom = 71.0
+theme_override_font_sizes/normal_font_size = 50
 text = "hi"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Slow_down" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Till_speed_up" to="." method="_on_till_speed_up_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

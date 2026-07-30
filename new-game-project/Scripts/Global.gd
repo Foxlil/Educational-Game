@@ -2,3 +2,12 @@ extends Node
 
 var attacking = false
 var attacking_done = false
+var which_question
+var how_many_answ: int
+var stage = 1
+var question_number
+var slow_true = false
+# Shooting game
+var question_index_1 = [0, 1, 2]
+var shot_yet = false
+var shot_correct = false

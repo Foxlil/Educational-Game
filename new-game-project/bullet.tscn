@@ -9,7 +9,7 @@ height = 266.0
 [node name="bullet" type="CharacterBody2D" unique_id=1129395680]
 script = ExtResource("1_v7oki")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=71142162]
+[node name="Area2D" type="Area2D" parent="." unique_id=71142162 groups=["Bullet"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1411000523]
 rotation = 1.5707964

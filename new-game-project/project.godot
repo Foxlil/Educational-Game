@@ -32,6 +32,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+Bullet=""
+
 [input]
 
 click={

@@ -25,5 +25,3 @@ offset_top = -1209.0
 offset_bottom = -813.0
 
 [node name="Boss projectiles" parent="." unique_id=1748536528 instance=ExtResource("4_3dryh")]
-
-[connection signal="finished_attacking" from="Boss projectiles" to="Big boss" method="_on_boss_projectiles_finished_attacking"]

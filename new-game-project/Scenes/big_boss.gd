@@ -3,7 +3,6 @@ extends CharacterBody2D
 enum State{Idle, Shoot_Attac, Type_Attac}
 var current_state = State.Idle
 var state_number
-var stage = 1
 var state_change = true
 
 var boss_projectile = preload("res://Scenes/boss_projectiles.tscn")
@@ -11,10 +10,11 @@ var question = preload("res://Scenes/Questions.tscn")
 var split = 4
 var projectile_angle = 0
 var wait_time = 3
-
-func _physics_process(delta: float) -> void:
+func _ready() -> void:
 	$"../Questions".hide()
 	$"../Boss projectiles".hide()
+func _physics_process(delta: float) -> void:
+	Global.how_many_answ = split - 1
 	current_state = State.Idle
 	var time
 	if state_change == true:
@@ -22,26 +22,25 @@ func _physics_process(delta: float) -> void:
 		time = randi_range(1,3)
 		await get_tree().create_timer(time).timeout
 		state_number = randi_range(1,10)
-		if stage == 1: 
+		if Global.stage == 1: 
 			if state_number < 9: 
 				current_state = State.Shoot_Attac
 			else: 
 				current_state = State.Type_Attac
-		elif stage == 2: 
+		elif Global.stage == 2: 
 			if state_number < 6: 
 				current_state = State.Shoot_Attac
 			else: 
 				current_state = State.Type_Attac
-		elif stage == 3: 
+		elif Global.stage == 3: 
 			if state_number < 3: 
 				current_state = State.Shoot_Attac
 			else: 
 				current_state = State.Type_Attac
 		ask(delta)
-		
-		#state_change = true
 	if Global.attacking_done == true: 
 		boss_attacking_done.emit()
+		
 signal boss_attacking_done
 var read_time = false
 func ask(delta: float) -> void:
@@ -57,6 +56,13 @@ func ask(delta: float) -> void:
 	await boss_attacking_done
 	await get_tree().create_timer(1).timeout
 	new_question.queue_free()
+	if Global.stage == 1: 
+		Global.question_index_1 = [0, 1, 2]
+	Global.shot_yet = false
+	Global.shot_correct = false
+	state_change = true
+	Global.attacking_done = false
+	read_time = false
 func firing(delta: float) -> void: 
 	if projectile_angle == (180.0 - 180.0/split): 
 		projectile_angle = 0
