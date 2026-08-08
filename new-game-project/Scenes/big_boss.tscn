@@ -1,10 +1,75 @@
 [gd_scene format=3 uid="uid://drdb4k6py1dg6"]
 
 [ext_resource type="Script" uid="uid://bmnqkoypqg5oh" path="res://Scenes/big_boss.gd" id="1_wenfl"]
+[ext_resource type="Texture2D" uid="uid://bjhvu0xxegukl" path="res://Assets/Sprites/Phoenix-Sheet.png" id="2_da3ur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
-radius = 258.0
-height = 748.0
+radius = 141.0
+height = 298.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2jd8"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkejo"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orhgc"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81bvj"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j8da"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7idl"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1qie"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6urhb"]
+atlas = ExtResource("2_da3ur")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3vw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2jd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkejo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orhgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81bvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j8da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7idl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1qie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6urhb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Big boss" type="CharacterBody2D" unique_id=669045473]
 script = ExtResource("1_wenfl")
@@ -15,3 +80,9 @@ script = ExtResource("1_wenfl")
 shape = SubResource("CapsuleShape2D_k3vw4")
 
 [node name="Firing position" type="Node2D" parent="." unique_id=1825382580]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=224104232]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k3vw4")
+autoplay = "default"
+frame_progress = 0.67880213

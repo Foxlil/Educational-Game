@@ -1,9 +1,46 @@
 [gd_scene format=3 uid="uid://kbtmyc156dxd"]
 
 [ext_resource type="Script" uid="uid://jc7w2sjkjqb6" path="res://Scripts/boss_projectiles.gd" id="1_jw0h5"]
+[ext_resource type="Texture2D" uid="uid://cxrbj4y2t3j0r" path="res://Assets/Sprites/Phoenix_projectile-Sheet.png" id="2_5fwmw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k3vw4"]
 radius = 120.41595
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw22m"]
+atlas = ExtResource("2_5fwmw")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy6fs"]
+atlas = ExtResource("2_5fwmw")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylxvk"]
+atlas = ExtResource("2_5fwmw")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq8i8"]
+atlas = ExtResource("2_5fwmw")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3vw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw22m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy6fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylxvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq8i8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="Boss projectiles" type="CharacterBody2D" unique_id=1748536528]
 script = ExtResource("1_jw0h5")
@@ -34,6 +71,11 @@ theme_override_font_sizes/normal_font_size = 50
 text = "hi"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273666305]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k3vw4")
+frame_progress = 0.46171486
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Slow_down" to="." method="_on_timer_timeout"]

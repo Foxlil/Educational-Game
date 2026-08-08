@@ -1,27 +1,33 @@
 [gd_scene format=3 uid="uid://cscunvgmfla7u"]
 
 [ext_resource type="PackedScene" uid="uid://ovbrp5f4s5bl" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://cjf7crjolaxam" path="res://Scripts/camera_2d.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://drdb4k6py1dg6" path="res://Scenes/big_boss.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cm42tisbghron" path="res://Scenes/background.tscn" id="3_i6g32"]
 [ext_resource type="PackedScene" uid="uid://b5b0q6i5lkmxj" path="res://Scenes/Questions.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://kbtmyc156dxd" path="res://Scenes/boss_projectiles.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D" unique_id=1729311665]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=456561319]
-position = Vector2(-1.5, -1027.5)
+position = Vector2(-2, -1574)
 scale = Vector2(0.5, 0.5)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(2.55, 2.55)
 limit_enabled = false
 position_smoothing_enabled = true
+script = ExtResource("1_wowpa")
+
+[node name="Questions" parent="." unique_id=250567167 instance=ExtResource("3_wrm1d")]
+offset_top = -1209.0
+offset_bottom = -813.0
+
+[node name="Sprite2D" parent="." unique_id=1513674080 instance=ExtResource("3_i6g32")]
+position = Vector2(-2, -1573)
 
 [node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
 position = Vector2(1, -405)
 
 [node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
 position = Vector2(1, -1620)
-
-[node name="Questions" parent="." unique_id=250567167 instance=ExtResource("3_wrm1d")]
-offset_top = -1209.0
-offset_bottom = -813.0
 
 [node name="Boss projectiles" parent="." unique_id=1748536528 instance=ExtResource("4_3dryh")]

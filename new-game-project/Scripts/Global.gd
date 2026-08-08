@@ -1,5 +1,8 @@
 extends Node
 
+var player_health = 100
+var enemy_health = 200
+
 var attacking = false
 var attacking_done = false
 var which_question
