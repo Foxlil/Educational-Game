@@ -32,7 +32,7 @@ script = ExtResource("1_wowpa")
 position = Vector2(381, 216)
 
 [node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
-position = Vector2(387, 398)
+position = Vector2(388, 382)
 
 [node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
 position = Vector2(384, 138)
@@ -52,18 +52,21 @@ offset_right = 536.0
 offset_bottom = 266.0
 
 [node name="Fast 1" type="Area2D" parent="." unique_id=1336273334 groups=["Fast"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 1" unique_id=391576258]
 position = Vector2(382, 203)
 shape = SubResource("RectangleShape2D_k3vw4")
 
 [node name="Slow" type="Area2D" parent="." unique_id=313150845 groups=["Slow"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slow" unique_id=461282645]
 position = Vector2(381, 251.5)
 shape = SubResource("RectangleShape2D_3kah2")
 
 [node name="Fast 2" type="Area2D" parent="." unique_id=1423695718 groups=["Fast"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 2" unique_id=509124237]
 position = Vector2(381, 356.25)

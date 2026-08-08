@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c410y8eynhfxp" path="res://Assets/Sprites/Player_health-Sheet.png" id="1_d7e0w"]
 [ext_resource type="Texture2D" uid="uid://dwavr3g6rd465" path="res://Assets/Sprites/Player_badge.png" id="1_rr4ua"]
 [ext_resource type="Texture2D" uid="uid://c47ekjab4hmrj" path="res://Assets/Sprites/Player_redHealth_fixed.png" id="2_xc1k0"]
+[ext_resource type="Script" uid="uid://cotabku7vs7w4" path="res://Scripts/Player_health.gd" id="3_d7bxd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlq4h"]
 atlas = ExtResource("1_d7e0w")
@@ -43,7 +44,7 @@ region = Rect2(320, 64, 160, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_rr4ua"]
 animations = [{
 "frames": [{
-"duration": 10.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wlq4h")
 }, {
 "duration": 1.0,
@@ -82,7 +83,7 @@ texture_filter = 1
 position = Vector2(80, 15)
 sprite_frames = SubResource("SpriteFrames_rr4ua")
 autoplay = "default"
-frame_progress = 0.86462605
+frame_progress = 0.18059826
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=493916088]
 texture_filter = 1
@@ -90,8 +91,10 @@ offset_left = 28.0
 offset_top = -1.0
 offset_right = 152.0
 offset_bottom = 31.0
+step = 0.01
 value = 100.0
 texture_progress = ExtResource("2_xc1k0")
+script = ExtResource("3_d7bxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165116426]
 texture_filter = 1

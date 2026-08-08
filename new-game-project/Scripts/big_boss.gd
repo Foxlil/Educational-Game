@@ -73,6 +73,7 @@ func ask(delta: float) -> void:
 	await boss_attacking_done
 	if Global.shot_correct == true: 
 		Global.enemy_health = Global.enemy_health - 20
+		print(Global.enemy_health)
 	else: 
 		Global.player_health = Global.player_health - 20
 		$"../Camera2D".screen_shake(10, 0.25)

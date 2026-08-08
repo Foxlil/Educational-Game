@@ -26,7 +26,6 @@ var question_answers_1 = [
 ]
 
 var index
-var tick
 func _ready() -> void:
 	if Global.stage == 1: 
 		index = Global.question_index_1.pick_random()
@@ -37,59 +36,26 @@ func _ready() -> void:
 	global_position = projectile_position
 	global_rotation = projectile_rotation
 
-
-#
-#var timer = false
-#var speed_up = true
 func _process(delta: float) -> void:
 	velocity = Vector2(projectile_speed, 0).rotated(projectile_rotation) * delta
 	move_and_slide()
 	rotation_degrees = 0
 	if Global.attacking == true:
 		pass
-		#if timer == false: 
-			#if speed_up == true: 
-				#timer = true
-				#$Slow_down.start()
 		duration -= delta
 		if duration <= 0:
 			queue_free()
 		if Global.shot_correct == true: 
 			queue_free()
-var gonna_check = false
 
-#var till_speed_up = false
-#func _on_timer_timeout() -> void:
-	#if speed_up == true: 
-		#if till_speed_up == false: 
-			#till_speed_up = true
-			#$Till_speed_up.start()
-			#timer = false
-			#projectile_speed = 10000
-			#Engine.time_scale = 0.25
-	#
-func _on_till_speed_up_timeout() -> void:
-	#till_speed_up = false
-	#speed_up = false
-	#if global_position.x < 276.0:
-		#print("I'm waiting")
-		#await get_tree().create_timer(0.5).timeout
-	#else:
-		#pass
-	#projectile_speed = 20000
-	Engine.time_scale = 1
-	
-	
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	Global.attacking_done = true
 	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Fast"):
-		print("Fast!")
 		Engine.time_scale = 1
 	elif area.is_in_group("Slow"):
-		print("Slow!")
 		if Global.shot_correct == false: 
 			Engine.time_scale = 0.25
 	if area.is_in_group("Bullet"):
