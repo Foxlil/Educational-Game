@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	await get_tree().create_timer(1.5).timeout
 	var tween = get_tree().create_tween()
 	var x = global_position.x
-	tween.tween_property($".", "global_position", Vector2(x,-2000), 1)
+	tween.tween_property($".", "global_position", Vector2(x,1.0), 1)

@@ -9,6 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://ygtcu6t6vxui" path="res://Scenes/phoenix_boss_health.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
+size = Vector2(782, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kah2"]
+size = Vector2(784, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65kyx"]
+size = Vector2(784, 157.5)
+
 [node name="Game" type="Node2D" unique_id=1729311665]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=456561319]
@@ -19,15 +28,11 @@ limit_enabled = false
 position_smoothing_enabled = true
 script = ExtResource("1_wowpa")
 
-[node name="Questions" parent="." unique_id=250567167 instance=ExtResource("3_wrm1d")]
-offset_top = -1209.0
-offset_bottom = -813.0
-
 [node name="Sprite2D" parent="." unique_id=1513674080 instance=ExtResource("3_i6g32")]
 position = Vector2(381, 216)
 
 [node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
-position = Vector2(1, -405)
+position = Vector2(387, 398)
 
 [node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
 position = Vector2(384, 138)
@@ -39,3 +44,27 @@ position = Vector2(-3, 14)
 
 [node name="player_health" parent="." unique_id=1547451259 instance=ExtResource("8_v158k")]
 position = Vector2(302, 385)
+
+[node name="Questions" parent="." unique_id=250567167 instance=ExtResource("3_wrm1d")]
+offset_left = 226.0
+offset_top = 215.0
+offset_right = 536.0
+offset_bottom = 266.0
+
+[node name="Fast 1" type="Area2D" parent="." unique_id=1336273334 groups=["Fast"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 1" unique_id=391576258]
+position = Vector2(382, 203)
+shape = SubResource("RectangleShape2D_k3vw4")
+
+[node name="Slow" type="Area2D" parent="." unique_id=313150845 groups=["Slow"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slow" unique_id=461282645]
+position = Vector2(381, 251.5)
+shape = SubResource("RectangleShape2D_3kah2")
+
+[node name="Fast 2" type="Area2D" parent="." unique_id=1423695718 groups=["Fast"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 2" unique_id=509124237]
+position = Vector2(381, 356.25)
+shape = SubResource("RectangleShape2D_65kyx")

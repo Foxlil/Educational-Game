@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxrbj4y2t3j0r" path="res://Assets/Sprites/Phoenix_projectile-Sheet.png" id="2_5fwmw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k3vw4"]
-radius = 120.41595
+radius = 32.695564
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw22m"]
 atlas = ExtResource("2_5fwmw")
@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 12.0
+"speed": 20.0
 }]
 
 [node name="Boss projectiles" type="CharacterBody2D" unique_id=1748536528]
@@ -50,32 +50,33 @@ script = ExtResource("1_jw0h5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=493538253]
 shape = SubResource("CircleShape2D_k3vw4")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273666305]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k3vw4")
+autoplay = "default"
+frame_progress = 0.89204985
+
 [node name="Slow_down" type="Timer" parent="." unique_id=349151291]
-wait_time = 0.25
+wait_time = 0.22
 one_shot = true
 ignore_time_scale = true
 
 [node name="Till_speed_up" type="Timer" parent="." unique_id=1992119258]
-wait_time = 2.0
 one_shot = true
 ignore_time_scale = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1234156635]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=197815679]
+modulate = Color(0, 0, 0, 1)
 offset_left = -106.0
 offset_top = -73.0
 offset_right = 106.0
 offset_bottom = 71.0
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 16
 text = "hi"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273666305]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_k3vw4")
-frame_progress = 0.46171486
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Slow_down" to="." method="_on_timer_timeout"]

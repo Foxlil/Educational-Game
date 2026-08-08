@@ -35,6 +35,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 Bullet=""
+Fast=""
+Slow=""
 
 [input]
 

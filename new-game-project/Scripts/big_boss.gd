@@ -12,7 +12,7 @@ var boss_projectile = preload("res://Scenes/boss_projectiles.tscn")
 var question = preload("res://Scenes/Questions.tscn")
 var split = 4
 var projectile_angle = 0
-var wait_time = 3
+var wait_time = 4
 func _ready() -> void:
 	$"../Questions".hide()
 	$"../Boss projectiles".hide()
@@ -62,7 +62,8 @@ func match_states() -> void:
 func ask(delta: float) -> void:
 	var new_question = question.instantiate()
 	new_question.show()
-	new_question.global_position.y = -1000
+	new_question.global_position.x = 226.0
+	new_question.global_position.y = 215.0
 	get_parent().add_child(new_question)
 	if read_time == false:
 		read_time = true
@@ -74,7 +75,7 @@ func ask(delta: float) -> void:
 		Global.enemy_health = Global.enemy_health - 20
 	else: 
 		Global.player_health = Global.player_health - 20
-		$"../Camera2D".screen_shake(20, 0.25)
+		$"../Camera2D".screen_shake(10, 0.25)
 	await get_tree().create_timer(1).timeout
 	new_question.queue_free()
 	if Global.stage == 1: 

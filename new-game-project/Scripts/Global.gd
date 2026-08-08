@@ -5,7 +5,7 @@ var enemy_health = 200
 
 var attacking = false
 var attacking_done = false
-var which_question
+var which_question: int
 var how_many_answ: int
 var stage = 1
 var question_number
