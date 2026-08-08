@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cm42tisbghron" path="res://Scenes/background.tscn" id="3_i6g32"]
 [ext_resource type="PackedScene" uid="uid://b5b0q6i5lkmxj" path="res://Scenes/Questions.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://kbtmyc156dxd" path="res://Scenes/boss_projectiles.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://ygtcu6t6vxui" path="res://Scenes/phoenix_boss_health.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
 
 [node name="Game" type="Node2D" unique_id=1729311665]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=456561319]
-position = Vector2(-2, -1574)
+position = Vector2(381, 215)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2.55, 2.55)
 limit_enabled = false
@@ -22,12 +24,18 @@ offset_top = -1209.0
 offset_bottom = -813.0
 
 [node name="Sprite2D" parent="." unique_id=1513674080 instance=ExtResource("3_i6g32")]
-position = Vector2(-2, -1573)
+position = Vector2(381, 216)
 
 [node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
 position = Vector2(1, -405)
 
 [node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
-position = Vector2(1, -1620)
+position = Vector2(384, 138)
 
 [node name="Boss projectiles" parent="." unique_id=1748536528 instance=ExtResource("4_3dryh")]
+
+[node name="Phoenix_boss_health" parent="." unique_id=1380062289 instance=ExtResource("7_1l0tm")]
+position = Vector2(-3, 14)
+
+[node name="player_health" parent="." unique_id=1547451259 instance=ExtResource("8_v158k")]
+position = Vector2(302, 385)
