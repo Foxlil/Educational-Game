@@ -6,9 +6,19 @@
 script = ExtResource("1_p4pt2")
 
 [node name="Question" type="Label" parent="." unique_id=1140654682]
-offset_top = -23.0
-offset_right = 43.0
+offset_top = -31.0
+offset_right = 63.0
+offset_bottom = -8.0
+text = "Hi there"
 
-[node name="Input" type="TextEdit" parent="." unique_id=1286320857]
-offset_right = 19.0
-offset_bottom = 8.0
+[node name="Input" type="LineEdit" parent="." unique_id=708522349]
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="CheckButton" type="Button" parent="." unique_id=258134541]
+offset_top = -71.0
+offset_right = 58.0
+offset_bottom = -40.0
+text = "Attack"
+
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]

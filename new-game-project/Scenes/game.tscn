@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kbtmyc156dxd" path="res://Scenes/boss_projectiles.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://ygtcu6t6vxui" path="res://Scenes/phoenix_boss_health.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://c3ssc3imrj81r" path="res://Scenes/attack_question.tscn" id="9_h4fw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
 size = Vector2(782, 58)
@@ -71,3 +72,9 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 2" unique_id=509124237]
 position = Vector2(381, 356.25)
 shape = SubResource("RectangleShape2D_65kyx")
+
+[node name="attack_question" parent="." unique_id=1693156891 instance=ExtResource("9_h4fw4")]
+position = Vector2(479, 454)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=64648584]
+position = Vector2(479, 352)
