@@ -35,13 +35,17 @@ func _ready() -> void:
 			Global.question_index_1.erase(index)
 	global_position = projectile_position
 	global_rotation = projectile_rotation
-
 func _process(delta: float) -> void:
 	velocity = Vector2(projectile_speed, 0).rotated(projectile_rotation) * delta
 	move_and_slide()
 	rotation_degrees = 0
 	if Global.attacking == true:
 		pass
+		if Global.flash == true: 
+			if index == (correct_answers_1[Global.question_number] - 1):
+				$AnimationPlayer.play("Flash_correct")
+				await $AnimationPlayer.animation_finished
+				Global.flash = false
 		duration -= delta
 		if duration <= 0:
 			queue_free()
@@ -63,10 +67,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			Global.shot_yet = true
 			if Global.stage == 1: 
 				if index == (correct_answers_1[Global.question_number] - 1): 
+					Global.flash = false
 					Global.shot_correct = true
 					Engine.time_scale = 1
 					Global.attacking_done = true
 				else: 
 					Global.shot_correct = false
+					Global.flash = true
 		elif Global.shot_yet == true: 
 			pass

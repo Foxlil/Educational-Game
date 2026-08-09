@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
-size = Vector2(782, 46)
+size = Vector2(782, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kah2"]
-size = Vector2(784, 51)
+size = Vector2(784, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65kyx"]
 size = Vector2(784, 157.5)
@@ -55,14 +55,14 @@ offset_bottom = 266.0
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 1" unique_id=391576258]
-position = Vector2(382, 203)
+position = Vector2(382, 209)
 shape = SubResource("RectangleShape2D_k3vw4")
 
 [node name="Slow" type="Area2D" parent="." unique_id=313150845 groups=["Slow"]]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slow" unique_id=461282645]
-position = Vector2(381, 251.5)
+position = Vector2(381, 257.5)
 shape = SubResource("RectangleShape2D_3kah2")
 
 [node name="Fast 2" type="Area2D" parent="." unique_id=1423695718 groups=["Fast"]]

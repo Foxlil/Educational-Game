@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3ssc3imrj81r"]
+
+[ext_resource type="Script" uid="uid://b32js1dxgcbwu" path="res://Scripts/attack_question.gd" id="1_p4pt2"]
+
+[node name="Node_2D" type="Node2D" unique_id=1693156891]
+script = ExtResource("1_p4pt2")
+
+[node name="Question" type="Label" parent="." unique_id=1140654682]
+offset_top = -23.0
+offset_right = 43.0
+
+[node name="Input" type="TextEdit" parent="." unique_id=1286320857]
+offset_right = 19.0
+offset_bottom = 8.0
