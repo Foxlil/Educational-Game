@@ -72,8 +72,11 @@ func ask(delta: float) -> void:
 			firing(delta)
 	await boss_attacking_done
 	if Global.shot_correct == true: 
-		Global.enemy_health = Global.enemy_health - 5
-		$Flash.play("Hit")
+		if Global.enemy_health == 200: 
+			Global.enemy_health = Global.enemy_health - 5
+		else: 
+			Global.enemy_health = Global.enemy_health - 1
+			$Flash.play("Hit")
 	else: 
 		Global.player_health = Global.player_health - 20
 		$"../Camera2D".screen_shake(10, 0.25)

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dnlhepg263fqw"]
+
+[ext_resource type="Texture2D" uid="uid://k6kh8en5nmlv" path="res://Assets/Sprites/Arrow.png" id="1_sft1s"]
+
+[node name="Player_attacks" type="Sprite2D" unique_id=213738141]
+
+[node name="Basic arrows 1" type="Sprite2D" parent="." unique_id=1818335400]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_sft1s")
+
+[node name="Double arrows 2" type="Sprite2D" parent="." unique_id=864668346]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_sft1s")
+
+[node name="Stone sword 1" type="Sprite2D" parent="." unique_id=1359409743]
+
+[node name="Copper sword 2" type="Sprite2D" parent="." unique_id=815121211]
+
+[node name="Steel sword 3" type="Sprite2D" parent="." unique_id=301231438]
+
+[node name="Diamond sword 4" type="Sprite2D" parent="." unique_id=1517951381]
+
+[node name="Magic spurt 1" type="Sprite2D" parent="." unique_id=529253389]
+
+[node name="Double magic spurt 2" type="Sprite2D" parent="." unique_id=1233940565]
+
+[node name="Magic splash 3" type="Sprite2D" parent="." unique_id=1245739284]
+
+[node name="Magic torrent 4" type="Sprite2D" parent="." unique_id=1509116900]

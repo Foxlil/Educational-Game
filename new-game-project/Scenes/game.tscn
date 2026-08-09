@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ygtcu6t6vxui" path="res://Scenes/phoenix_boss_health.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://c3ssc3imrj81r" path="res://Scenes/attack_question.tscn" id="9_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://c30ouc8ey1k68" path="res://Assets/Sprites/Tiger_player.png" id="10_ldgsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
 size = Vector2(782, 58)
@@ -33,7 +34,8 @@ script = ExtResource("1_wowpa")
 position = Vector2(381, 216)
 
 [node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
-position = Vector2(388, 382)
+position = Vector2(389, 363)
+scale = Vector2(1, 1)
 
 [node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
 position = Vector2(384, 138)
@@ -78,3 +80,8 @@ position = Vector2(479, 454)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=64648584]
 position = Vector2(479, 352)
+
+[node name="Player_sprite" type="Sprite2D" parent="." unique_id=1228812021]
+texture_filter = 1
+position = Vector2(389, 363)
+texture = ExtResource("10_ldgsr")

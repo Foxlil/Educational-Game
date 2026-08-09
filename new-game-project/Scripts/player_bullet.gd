@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var bullet_position: Vector2
 var bullet_rotation: float
-var speed = 200000
+var speed = 100000
 
 var duration = 20
 
