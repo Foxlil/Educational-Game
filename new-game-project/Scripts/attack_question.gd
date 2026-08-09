@@ -3,6 +3,27 @@ extends Node2D
 @onready var question: Label = $Question
 @onready var check_button: Button = $CheckButton
 
+var question_list = ["hi","bro",":3"]
+var correct_answers_1 = [
+	2, 
+	3, 
+	1,
+]
+var amount_per_question = 3
+var question_answers_1 = [
+	"there",
+	"correct",
+	"bye",
+	
+	"ski",
+	"tato",
+	"correct",
+	
+	"correct",
+	"mew",
+	"meowchi"
+]
+
 var normal_button_position
 var pressed = false
 # Called when the node enters the scene tree for the first time.
@@ -10,12 +31,19 @@ func _ready() -> void:
 	#input.text_submitted.connect(_on_LineEdit_text_entered)
 	normal_button_position = check_button.global_position
 	
-func _on_LineEdit_text_entered(new_text: String) -> void:
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var answered = true
+func _physics_process(delta: float) -> void:
+	pass
+	$Input.text_submitted.connect(_input_received)
+var question_number
 func _process(delta: float) -> void:
 	if pressed == true: 
+		if answered == true: 
+			question_number = randi_range(0, question_list.size() - 1)
+			$Question.text = question_list[question_number]
+			$Input.clear()
+			answered = false
 		var pressed_input = create_tween().set_ignore_time_scale(true)
 		var pressed_button = create_tween().set_ignore_time_scale(true)
 		var pressed_question = create_tween().set_ignore_time_scale(true)
@@ -35,3 +63,6 @@ func _on_check_button_pressed() -> void:
 		pressed = false
 	elif pressed == false: 
 		pressed = true
+func _input_received(new_text: String) -> void: 
+	if new_text.to_lower() == question_answers_1[(question_number * amount_per_question) + (correct_answers_1[question_number] - 1)]: 
+		answered = true
