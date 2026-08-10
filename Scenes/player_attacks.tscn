@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dnlhepg263fqw"]
+
+[ext_resource type="Script" uid="uid://eubnne6fx7ff" path="res://Scenes/Player_attacks.gd" id="1_sft1s"]
+[ext_resource type="Texture2D" uid="uid://bgrgmg02gkekr" path="res://Assets/Sprites/Charging_bar.png" id="2_04xak"]
+
+[node name="Button" type="Button" unique_id=2140821266]
+offset_right = 16.0
+offset_bottom = 16.0
+focus_mode = 0
+script = ExtResource("1_sft1s")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1002498592]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 14.0
+offset_right = 13.0
+offset_bottom = 15.0
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("2_04xak")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

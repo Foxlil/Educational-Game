@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://cscunvgmfla7u"]
+
+[ext_resource type="PackedScene" uid="uid://ovbrp5f4s5bl" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://cjf7crjolaxam" path="res://Scripts/camera_2d.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://drdb4k6py1dg6" path="res://Scenes/big_boss.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cm42tisbghron" path="res://Scenes/background.tscn" id="3_i6g32"]
+[ext_resource type="PackedScene" uid="uid://b5b0q6i5lkmxj" path="res://Scenes/Questions.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://kbtmyc156dxd" path="res://Scenes/boss_projectiles.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://ygtcu6t6vxui" path="res://Scenes/phoenix_boss_health.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://bf1ve7a6wmu5r" path="res://Scenes/player_health.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://c3ssc3imrj81r" path="res://Scenes/attack_question.tscn" id="9_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://c30ouc8ey1k68" path="res://Assets/Sprites/Tiger_player.png" id="10_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://dnlhepg263fqw" path="res://Scenes/player_attacks.tscn" id="11_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://k6kh8en5nmlv" path="res://Assets/Sprites/Arrow.png" id="12_rfjv2"]
+[ext_resource type="Script" uid="uid://blqdr1srn2pt3" path="res://Scenes/basic_arrow_attack.gd" id="13_1phco"]
+[ext_resource type="PackedScene" uid="uid://clj2hcoq468kr" path="res://Scenes/two_arrows.tscn" id="14_1phco"]
+[ext_resource type="Script" uid="uid://b2wcxi6cblkph" path="res://Scenes/two_arrows_2.gd" id="15_nb51f"]
+[ext_resource type="Texture2D" uid="uid://coxffjqdmdbi3" path="res://Assets/Sprites/Copper_sword-Sheet.png" id="16_nnt18"]
+[ext_resource type="Script" uid="uid://d20h3veuc4sht" path="res://Scenes/copper_sword.gd" id="17_ewbju"]
+[ext_resource type="Script" uid="uid://ccqphw3s5rxvu" path="res://Scenes/sword.gd" id="18_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://b18biqq1ppfkx" path="res://Assets/Sprites/Diamond_sword-Sheet.png" id="18_iivbl"]
+[ext_resource type="Script" uid="uid://bvo028byr0ci7" path="res://Scenes/steel_sword.gd" id="19_7nbq1"]
+[ext_resource type="Script" uid="uid://jro86dsaovnr" path="res://Scenes/area_2d.gd" id="21_exi56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
+size = Vector2(782, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kah2"]
+size = Vector2(784, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65kyx"]
+size = Vector2(784, 157.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
+radius = 4.0
+height = 68.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewbju"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qyi"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iivbl"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbq1"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exi56"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8sx"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg4q0"]
+atlas = ExtResource("16_nnt18")
+region = Rect2(0, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3vw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewbju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85qyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iivbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exi56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg4q0")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4qeh"]
+size = Vector2(220, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm72l"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22asu"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkdbe"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81klo"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgy6u"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwurv"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mucmn"]
+atlas = ExtResource("18_iivbl")
+region = Rect2(0, 640, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kah2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm72l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22asu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkdbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81klo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgy6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwurv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mucmn")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Game" type="Node2D" unique_id=1729311665]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=456561319]
+position = Vector2(381, 215)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(2.55, 2.55)
+limit_enabled = false
+position_smoothing_enabled = true
+script = ExtResource("1_wowpa")
+
+[node name="Sprite2D" parent="." unique_id=1513674080 instance=ExtResource("3_i6g32")]
+position = Vector2(381, 216)
+
+[node name="Player" parent="." unique_id=159584399 instance=ExtResource("1_ebmjs")]
+position = Vector2(389, 363)
+scale = Vector2(1, 1)
+
+[node name="Big boss" parent="." unique_id=669045473 instance=ExtResource("2_qxrlw")]
+position = Vector2(384, 138)
+
+[node name="Boss projectiles" parent="." unique_id=1748536528 instance=ExtResource("4_3dryh")]
+
+[node name="Phoenix_boss_health" parent="." unique_id=1380062289 instance=ExtResource("7_1l0tm")]
+position = Vector2(-3, 14)
+
+[node name="player_health" parent="." unique_id=1547451259 instance=ExtResource("8_v158k")]
+position = Vector2(302, 385)
+
+[node name="Questions" parent="." unique_id=250567167 instance=ExtResource("3_wrm1d")]
+offset_left = 226.0
+offset_top = 215.0
+offset_right = 536.0
+offset_bottom = 266.0
+
+[node name="Fast 1" type="Area2D" parent="." unique_id=1336273334 groups=["Fast"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 1" unique_id=391576258]
+position = Vector2(382, 209)
+shape = SubResource("RectangleShape2D_k3vw4")
+
+[node name="Slow" type="Area2D" parent="." unique_id=313150845 groups=["Slow"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slow" unique_id=461282645]
+position = Vector2(381, 257.5)
+shape = SubResource("RectangleShape2D_3kah2")
+
+[node name="Fast 2" type="Area2D" parent="." unique_id=1423695718 groups=["Fast"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 2" unique_id=509124237]
+position = Vector2(381, 356.25)
+shape = SubResource("RectangleShape2D_65kyx")
+
+[node name="attack_question" parent="." unique_id=1693156891 instance=ExtResource("9_h4fw4")]
+position = Vector2(479, 454)
+
+[node name="Player_sprite" type="Sprite2D" parent="." unique_id=1228812021]
+texture_filter = 1
+position = Vector2(389, 363)
+texture = ExtResource("10_ldgsr")
+
+[node name="Button" parent="." unique_id=2140821266 instance=ExtResource("11_o5yvi")]
+offset_left = 272.0
+offset_top = 394.0
+offset_right = 288.0
+offset_bottom = 410.0
+index = 1
+time = 1.0
+
+[node name="Basic_arrow_attack" type="Sprite2D" parent="Button" unique_id=688427082]
+texture_filter = 1
+position = Vector2(120, -442)
+rotation = -1.5707964
+texture = ExtResource("12_rfjv2")
+script = ExtResource("13_1phco")
+
+[node name="Area2D" type="Area2D" parent="Button/Basic_arrow_attack" unique_id=1330204093 groups=["Player_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Basic_arrow_attack/Area2D" unique_id=783352797]
+position = Vector2(2, 1.0000001)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_k3vw4")
+
+[node name="Button2" parent="." unique_id=370599766 instance=ExtResource("11_o5yvi")]
+offset_left = 251.0
+offset_top = 394.0
+offset_right = 267.0
+offset_bottom = 410.0
+index = 2
+time = 1.5
+
+[node name="Two_arrows_1" parent="Button2" unique_id=1283062001 instance=ExtResource("14_1phco")]
+position = Vector2(287, 78)
+
+[node name="Area2D" type="Area2D" parent="Button2/Two_arrows_1" unique_id=1402775579 groups=["Player_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button2/Two_arrows_1/Area2D" unique_id=1670448398]
+position = Vector2(2, 1.0000001)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_k3vw4")
+
+[node name="Two_arrows_2" parent="Button2" unique_id=639708942 instance=ExtResource("14_1phco")]
+position = Vector2(14, 75)
+rotation = -0.7853982
+script = ExtResource("15_nb51f")
+
+[node name="Area2D" type="Area2D" parent="Button2/Two_arrows_2" unique_id=1880181488 groups=["Player_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button2/Two_arrows_2/Area2D" unique_id=967573877]
+position = Vector2(2, 1.0000001)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_k3vw4")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2022017250]
+position = Vector2(268, 467)
+
+[node name="Button3" parent="." unique_id=1074884163 instance=ExtResource("11_o5yvi")]
+offset_left = 230.0
+offset_top = 394.0
+offset_right = 246.0
+offset_bottom = 410.0
+index = 3
+time = 2.0
+
+[node name="Copper sword" type="AnimatedSprite2D" parent="Button3" unique_id=253582784]
+texture_filter = 1
+position = Vector2(160, -55)
+sprite_frames = SubResource("SpriteFrames_k3vw4")
+frame = 6
+frame_progress = 1.0
+script = ExtResource("17_ewbju")
+
+[node name="Area2D" type="Area2D" parent="Button3/Copper sword" unique_id=541643512 groups=["Player_attack"]]
+script = ExtResource("18_7nbq1")
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="Button3/Copper sword/Area2D" unique_id=1739755406]
+position = Vector2(-2, -80.5)
+shape = SubResource("RectangleShape2D_x4qeh")
+
+[node name="Button4" parent="." unique_id=1806557754 instance=ExtResource("11_o5yvi")]
+offset_left = 210.0
+offset_top = 394.0
+offset_right = 226.0
+offset_bottom = 410.0
+index = 4
+time = 5.0
+
+[node name="Diamond sword" type="AnimatedSprite2D" parent="Button4" unique_id=740456148]
+texture_filter = 1
+position = Vector2(180, -55)
+sprite_frames = SubResource("SpriteFrames_3kah2")
+frame = 6
+frame_progress = 1.0
+script = ExtResource("19_7nbq1")
+
+[node name="Area2D" type="Area2D" parent="Button4/Diamond sword" unique_id=859511887 groups=["Player_attack"]]
+script = ExtResource("21_exi56")
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="Button4/Diamond sword/Area2D" unique_id=1685484870]
+position = Vector2(-2, -80.5)
+shape = SubResource("RectangleShape2D_x4qeh")
+
+[connection signal="pressed" from="Button" to="Button/Basic_arrow_attack" method="_on_button_pressed"]
+[connection signal="player_attack_done" from="Button/Basic_arrow_attack" to="Button" method="_on_basic_arrow_attack_player_attack_done"]
+[connection signal="pressed" from="Button2" to="Button2/Two_arrows_1" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button2" to="Button2/Two_arrows_2" method="_on_button_2_pressed"]
+[connection signal="two_arrows_attack_done" from="Button2/Two_arrows_1" to="Button2" method="_on_two_arrows_1_two_arrows_attack_done"]
+[connection signal="pressed" from="Button3" to="Button3/Copper sword" method="_on_button_3_pressed"]
+[connection signal="copper_sword_hit" from="Button3/Copper sword" to="Button3" method="_on_copper_sword_copper_sword_hit"]
+[connection signal="pressed" from="Button4" to="Button4/Diamond sword" method="_on_button_4_pressed"]
+[connection signal="diamond_sword_hit" from="Button4/Diamond sword" to="Button4" method="_on_diamond_sword_diamond_sword_hit"]

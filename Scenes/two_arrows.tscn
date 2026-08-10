@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clj2hcoq468kr"]
+
+[ext_resource type="Texture2D" uid="uid://k6kh8en5nmlv" path="res://Assets/Sprites/Arrow.png" id="1_1uotf"]
+[ext_resource type="Script" uid="uid://kewvc5b6hl31" path="res://Scenes/two_arrows.gd" id="2_l2qqd"]
+
+[node name="Two_arrows" type="Sprite2D" unique_id=1283062001]
+texture_filter = 1
+position = Vector2(292, 196)
+rotation = 3.9269907
+texture = ExtResource("1_1uotf")
+script = ExtResource("2_l2qqd")

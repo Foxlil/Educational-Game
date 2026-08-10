@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://c3ssc3imrj81r"]
+
+[ext_resource type="Script" uid="uid://b32js1dxgcbwu" path="res://Scripts/attack_question.gd" id="1_p4pt2"]
+[ext_resource type="Texture2D" uid="uid://o1ta6wcjvbkp" path="res://Assets/Sprites/Attack_bar-Sheet.png" id="2_xxp8l"]
+[ext_resource type="Texture2D" uid="uid://e77bpsrem2k2" path="res://Assets/Sprites/Attack_bar_juice.png" id="3_2db6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2db6i"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(0, 0, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj442"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(80, 0, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t01j8"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(160, 0, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcalj"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(0, 32, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa6bx"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(80, 32, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7af0u"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(160, 32, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjocg"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(0, 64, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n26eo"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(80, 64, 80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejycb"]
+atlas = ExtResource("2_xxp8l")
+region = Rect2(0, 0, 80, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3vw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2db6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj442")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t01j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcalj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa6bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7af0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjocg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n26eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejycb")
+}],
+"loop": 0,
+"name": &"Flash!",
+"speed": 12.0
+}]
+
+[node name="Node_2D" type="Node2D" unique_id=1693156891]
+script = ExtResource("1_p4pt2")
+
+[node name="Question" type="Label" parent="." unique_id=1140654682]
+offset_top = -31.0
+offset_right = 63.0
+offset_bottom = -8.0
+text = "Hi there"
+
+[node name="Input" type="LineEdit" parent="." unique_id=708522349]
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="CheckButton" type="Button" parent="." unique_id=258134541]
+offset_top = -71.0
+offset_right = 58.0
+offset_bottom = -40.0
+focus_mode = 0
+text = "Attack"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=109766601]
+
+[node name="Bar" type="AnimatedSprite2D" parent="Node2D" unique_id=672880826]
+texture_filter = 1
+position = Vector2(114, -56)
+sprite_frames = SubResource("SpriteFrames_k3vw4")
+animation = &"Flash!"
+frame = 8
+frame_progress = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Node2D" unique_id=1421370360]
+texture_filter = 1
+offset_left = 83.0
+offset_top = -72.0
+offset_right = 147.0
+offset_bottom = -40.0
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("3_2db6i")
+
+[node name="Attack icon" type="Sprite2D" parent="Node2D" unique_id=1118200888]
+
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]

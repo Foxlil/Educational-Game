@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ygtcu6t6vxui"]
+
+[ext_resource type="Texture2D" uid="uid://cvg6w8pdgygp3" path="res://Assets/Sprites/Phoenix_redHealth.png" id="2_epil0"]
+[ext_resource type="Texture2D" uid="uid://blo7feoasve6x" path="res://Assets/Sprites/Phoenix_health_true.png" id="2_qqmhv"]
+[ext_resource type="Script" uid="uid://x0p2nndlnu4g" path="res://Scripts/Phoenix_health.gd" id="3_qqmhv"]
+[ext_resource type="Texture2D" uid="uid://btm66rv1iyl0n" path="res://Assets/Sprites/Phoenix_badge-Sheet.png" id="4_4tlij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrbml"]
+atlas = ExtResource("4_4tlij")
+region = Rect2(0, 0, 320, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaprd"]
+atlas = ExtResource("4_4tlij")
+region = Rect2(320, 0, 320, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5738j"]
+atlas = ExtResource("4_4tlij")
+region = Rect2(0, 32, 320, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w35mv"]
+atlas = ExtResource("4_4tlij")
+region = Rect2(320, 32, 320, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65kyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrbml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaprd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5738j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w35mv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Phoenix_boss_health" type="Node2D" unique_id=1598638463]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1253614874]
+texture_filter = 1
+offset_left = 227.0
+offset_top = 3.0
+offset_right = 547.0
+offset_bottom = 43.0
+step = 0.01
+value = 100.0
+texture_under = ExtResource("2_qqmhv")
+texture_progress = ExtResource("2_epil0")
+script = ExtResource("3_qqmhv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1661411251]
+texture_filter = 1
+position = Vector2(386, 17)
+sprite_frames = SubResource("SpriteFrames_65kyx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.074177474
