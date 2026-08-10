@@ -30,13 +30,13 @@ var weapon_type = [
 	2.0, 
 	4.0, 
 	6.0, 
-	8.0,
-	10.0,
-	12.0, 
-	14.0, 
-	16.0, 
-	18.0, 
-	20.0
+	#8.0,
+	#10.0,
+	#12.0, 
+	#14.0, 
+	#16.0, 
+	#18.0, 
+	#20.0
 ]
 var weapon_number = 0
 var juice_phase = 0.0
@@ -78,7 +78,9 @@ func _on_check_button_pressed() -> void:
 		pressed = false
 	elif pressed == false: 
 		pressed = true
-func _input_received(new_text: String) -> void: 
+
+var stage = 0
+func _input_received(new_text: String) -> void:  
 	if new_text.to_lower() == question_answers_1[(question_number * amount_per_question) + (correct_answers_1[question_number] - 1)]: 
 		answered = true
 	if answered == true: 
@@ -88,7 +90,12 @@ func _input_received(new_text: String) -> void:
 		juice_tween.tween_property($Node2D/TextureProgressBar, "value", new_value, 0.5)
 		if weapon_type[weapon_number] == juice_phase:
 			weapon_number = weapon_number + 1
+			if !Global.what_available.has(weapon_number):
+				Global.what_available.append(weapon_number)
 			new_value = 0.0
 			juice_phase = 0.0
 			$Node2D/Bar.play("Flash!")
 		juice_tween.tween_property($Node2D/TextureProgressBar, "value", new_value, 0)
+		if weapon_number == weapon_type.size() && juice_phase == 0.0: 
+			stage = stage + 1
+			weapon_number = 0

@@ -15,3 +15,5 @@ var question_index_1 = [0, 1, 2]
 var shot_yet = false
 var shot_correct = false
 var flash = false
+#attacking game
+var what_available = []

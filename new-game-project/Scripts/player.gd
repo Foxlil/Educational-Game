@@ -3,7 +3,8 @@ var bullet_path = preload("res://bullet.tscn")
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("space"):
-		fire()
+		if Global.attacking == true:
+			fire()
 func fire():
 	$AnimatedSprite2D.play()
 	var bullet = bullet_path.instantiate()

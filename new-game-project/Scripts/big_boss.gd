@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		ask(delta)
 	match_states()
 	if Global.attacking_done == true: 
+		Global.attacking = false
 		boss_attacking_done.emit()
 		
 signal boss_attacking_done
