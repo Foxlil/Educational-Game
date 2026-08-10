@@ -24,19 +24,34 @@ var question_answers_1 = [
 	"meowchi"
 ]
 
-var normal_button_position
+
 var pressed = false
+var weapon_type = [
+	2.0, 
+	4.0, 
+	6.0, 
+	8.0,
+	10.0,
+	12.0, 
+	14.0, 
+	16.0, 
+	18.0, 
+	20.0
+]
+var weapon_number = 0
+var juice_phase = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#input.text_submitted.connect(_on_LineEdit_text_entered)
-	normal_button_position = check_button.global_position
-	
+	pass
+	$Node2D/TextureProgressBar.value = 0
+	$Input.text_submitted.connect(_input_received)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var answered = true
+var question_number
 func _physics_process(delta: float) -> void:
 	pass
-	$Input.text_submitted.connect(_input_received)
-var question_number
+	
+var new_value
 func _process(delta: float) -> void:
 	if pressed == true: 
 		if answered == true: 
@@ -66,3 +81,14 @@ func _on_check_button_pressed() -> void:
 func _input_received(new_text: String) -> void: 
 	if new_text.to_lower() == question_answers_1[(question_number * amount_per_question) + (correct_answers_1[question_number] - 1)]: 
 		answered = true
+	if answered == true: 
+		juice_phase = juice_phase + 1.0
+		new_value = (juice_phase/weapon_type[weapon_number]) * 100
+		var juice_tween = create_tween().set_ignore_time_scale(true)
+		juice_tween.tween_property($Node2D/TextureProgressBar, "value", new_value, 0.5)
+		if weapon_type[weapon_number] == juice_phase:
+			weapon_number = weapon_number + 1
+			new_value = 0.0
+			juice_phase = 0.0
+			$Node2D/Bar.play("Flash!")
+		juice_tween.tween_property($Node2D/TextureProgressBar, "value", new_value, 0)
