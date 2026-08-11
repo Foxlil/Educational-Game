@@ -1,0 +1,41 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://n810ut8yfsbb"
+path="res://.godot/imported/NotoColorEmoji-Regular.ttf-58f680683708991da3c0ee8063b5794d.fontdata"
+
+[deps]
+
+source_file="res://Assets/NotoColorEmoji-Regular.ttf"
+dest_files=["res://.godot/imported/NotoColorEmoji-Regular.ttf-58f680683708991da3c0ee8063b5794d.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=3
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[Resource("uid://n810ut8yfsbb", "res://Assets/NotoColorEmoji-Regular.ttf")]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}
