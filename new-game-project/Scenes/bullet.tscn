@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cjecptbtedsdx"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
-
-[node name="Bullet" type="Area2D" unique_id=1235994118]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843148234]
-shape = SubResource("CapsuleShape2D_k3vw4")
