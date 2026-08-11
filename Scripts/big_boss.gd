@@ -16,38 +16,41 @@ var wait_time = 4
 func _ready() -> void:
 	$"../Questions".hide()
 	$"../Boss projectiles".hide()
+	
 func _physics_process(delta: float) -> void:
 	Global.how_many_answ = split - 1
 	current_state = State.Idle
 	var time
 	if state_change == true:
-		state_change = false
-		time = randi_range(1,3)
-		await get_tree().create_timer(time).timeout
-		state_number = randi_range(1,10)
-		if Global.stage == 1: 
-			if state_number < 9: 
-				current_state = State.Shoot_Attac
-			else: 
-				current_state = State.Type_Attac
-		elif Global.stage == 2: 
-			if state_number < 6: 
-				current_state = State.Shoot_Attac
-			else: 
-				current_state = State.Type_Attac
-		elif Global.stage == 3: 
-			if state_number < 3: 
-				current_state = State.Shoot_Attac
-			else: 
-				current_state = State.Type_Attac
-		ask(delta)
+		if !Global.lost == true && !Global.won == true:
+			state_change = false
+			time = randi_range(1,3)
+			await get_tree().create_timer(time).timeout
+			state_number = randi_range(1,10)
+			if Global.stage == 1: 
+				if state_number < 9: 
+					current_state = State.Shoot_Attac
+				else: 
+					current_state = State.Type_Attac
+			elif Global.stage == 2: 
+				if state_number < 6: 
+					current_state = State.Shoot_Attac
+				else: 
+					current_state = State.Type_Attac
+			elif Global.stage == 3: 
+				if state_number < 3: 
+					current_state = State.Shoot_Attac
+				else: 
+					current_state = State.Type_Attac
+			ask(delta)
 	match_states()
 	if Global.attacking_done == true: 
 		boss_attacking_done.emit()
-		
+
 signal boss_attacking_done
 var read_time = false
 var is_attacking = false
+var start = true
 func match_states() -> void: 
 	match current_state: 
 		pass
@@ -74,6 +77,7 @@ func ask(delta: float) -> void:
 	if Global.shot_correct == true: 
 		if Global.enemy_health == 200: 
 			Global.enemy_health = Global.enemy_health - 5
+			$Flash.play("Hit")
 		else: 
 			Global.enemy_health = Global.enemy_health - 1
 			$Flash.play("Hit")

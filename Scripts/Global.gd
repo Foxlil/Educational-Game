@@ -1,7 +1,12 @@
 extends Node
 
+var lost = false
+var won = false
+
 var player_health = 100
 var enemy_health = 200
+
+var shot_correct = false
 
 var attacking = false
 var attacking_done = false
@@ -13,8 +18,9 @@ var slow_true = false
 # Shooting game
 var question_index_1 = [0, 1, 2]
 var shot_yet = false
-var shot_correct = false
 var flash = false
 #attacking game
 var what_available = []
 var number_of_times = 1
+
+#losing, winning
