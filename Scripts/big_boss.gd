@@ -60,6 +60,8 @@ func match_states() -> void:
 		State.Shoot_Attac: 
 			is_attacking = true
 			boss_animation.play("Attack")
+			$AudioStreamPlayer2D2.pitch_scale = randf_range(1.0, 1.5)
+			$AudioStreamPlayer2D2.play(0.9)
 			await boss_animation.animation_finished
 			is_attacking = false
 func ask(delta: float) -> void:
@@ -71,6 +73,7 @@ func ask(delta: float) -> void:
 	if read_time == false:
 		read_time = true
 		await get_tree().create_timer(wait_time).timeout
+		$AudioStreamPlayer2D.play(0.79)
 		for i in range(3):
 			firing(delta)
 	await boss_attacking_done

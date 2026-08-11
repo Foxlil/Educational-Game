@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var bullet_path = preload("res://bullet.tscn")
+var bullet_path = preload("res://Scenes/bullet.tscn")
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("space"):
@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 		Global.won = true
 func fire():
 	$AnimatedSprite2D.play()
+	$AudioStreamPlayer2D.play()
 	var bullet = bullet_path.instantiate()
 	bullet.bullet_position = $"Firing position".global_position
 	bullet.bullet_rotation = global_rotation

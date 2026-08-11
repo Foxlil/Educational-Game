@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 			queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	$AudioStreamPlayer2D.play()
 	Global.attacking_done = true
 	Engine.time_scale = 1.0
 	

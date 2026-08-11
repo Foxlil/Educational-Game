@@ -74,6 +74,7 @@ func _process(delta: float) -> void:
 		pressed_question.tween_property($Question, "global_position", Vector2($Question.global_position.x, 423.0), 1)
 
 func _on_check_button_pressed() -> void:
+	$CheckButton/AudioStreamPlayer2D.play()
 	if pressed == true: 
 		pressed = false
 	elif pressed == false: 
@@ -98,6 +99,7 @@ func _input_received(new_text: String) -> void:
 				Global.what_available.append(weapon_number)
 			new_value = 0.0
 			juice_phase = 0.0
+			$AudioStreamPlayer2D.play()
 			$Node2D/Bar.play("Flash!")
 			
 		juice_tween.tween_property($Node2D/TextureProgressBar, "value", new_value, 0)
