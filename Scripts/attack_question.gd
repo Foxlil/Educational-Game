@@ -3,25 +3,57 @@ extends Node2D
 @onready var question: Label = $Question
 @onready var check_button: Button = $CheckButton
 
-var question_list = ["hi","bro",":3"]
+var question_list = [
+	"🐶",
+	"🐱",
+	"🦁", 
+	"🐵", 
+	"🐴", 
+	"🐷", 
+	"🐑", 
+	"🐐", 
+	"🐔", 
+	"🦆"
+	]
 var correct_answers_1 = [
 	2, 
 	3, 
 	1,
+	3, 
+	2, 
+	1, 
+	3, 
+	2, 
+	1, 
+	1, 
 ]
 var amount_per_question = 3
 var question_answers_1 = [
-	"there",
-	"correct",
-	"bye",
+	"dig",
+	"dog",
+	"doge",
 	
-	"ski",
-	"tato",
-	"correct",
+	"cet",
+	"cot",
+	"cat",
 	
-	"correct",
-	"mew",
-	"meowchi"
+	"lion",
+	"lyin",
+	"loni",
+	
+	"monk", "mink", "monkey",
+	
+	"hose", "horse", "horsed",
+	
+	"pig", "zhu", "peg",
+	
+	"shep", "shepe", "sheep", 
+	
+	"sheep", "goat", "goatee",
+	
+	"chicken", "sicken", "chickin",
+	
+	"duck", "quack", "chicken"
 ]
 
 

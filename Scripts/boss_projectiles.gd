@@ -10,19 +10,40 @@ var correct_answers_1 = [
 	2, 
 	3, 
 	1,
+	3, 
+	2, 
+	1, 
+	3, 
+	2, 
+	1, 
+	1, 
 ]
 var question_answers_1 = [
-	"there",
-	"correct",
-	"bye",
+	"dig",
+	"dog",
+	"doge",
 	
-	"ski",
-	"tato",
-	"correct",
+	"cet",
+	"cot",
+	"cat",
 	
-	"correct",
-	"mew",
-	"meowchi"
+	"lion",
+	"lyin",
+	"loni",
+	
+	"monk", "mink", "monkey",
+	
+	"hose", "horse", "horsed",
+	
+	"pig", "zhu", "peg",
+	
+	"shep", "shepe", "sheep", 
+	
+	"sheep", "goat", "goatee",
+	
+	"chicken", "sicken", "chickin",
+	
+	"duck", "quack", "chicken"
 ]
 
 var index

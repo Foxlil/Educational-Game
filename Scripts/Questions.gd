@@ -1,5 +1,16 @@
 extends RichTextLabel
-var question_list = ["hi","bro",":3"]
+var question_list = [
+	"🐶",
+	"🐱",
+	"🦁", 
+	"🐵", 
+	"🐴", 
+	"🐷", 
+	"🐑", 
+	"🐐", 
+	"🐔", 
+	"🦆"
+	]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
