@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://c4t4jgnndrfs6" path="res://Assets/Sprites/Button.png" id="27_81klo"]
 [ext_resource type="Script" uid="uid://bq21hley3ehio" path="res://Scenes/you_lost_screen.gd" id="27_tgy6u"]
 [ext_resource type="AudioStream" uid="uid://ca7iggkpgskky" path="res://Assets/universfield-cinematic-impact-hit-352702.mp3" id="29_ese38"]
+[ext_resource type="Script" uid="uid://g48mlysvqx57" path="res://Scripts/label.gd" id="34_xe308"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
 size = Vector2(782, 58)
@@ -163,6 +164,9 @@ animations = [{
 "name": &"default",
 "speed": 12.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3vw4"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5019608)
 
 [node name="Game" type="Node2D" unique_id=1729311665]
 
@@ -400,6 +404,16 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="You_died_screen/Button" unique_id=505732387]
 stream = ExtResource("16_oeip8")
+
+[node name="Label" type="Label" parent="." unique_id=294906226]
+offset_left = 222.0
+offset_top = 304.0
+offset_right = 566.0
+offset_bottom = 327.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3vw4")
+text = "Press SPACE to shoot the correct answer"
+horizontal_alignment = 1
+script = ExtResource("34_xe308")
 
 [connection signal="pressed" from="Button" to="Button/Basic_arrow_attack" method="_on_button_pressed"]
 [connection signal="player_attack_done" from="Button/Basic_arrow_attack" to="Button" method="_on_basic_arrow_attack_player_attack_done"]
