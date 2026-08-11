@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chn686we0fs5c" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://5dbxqhy764ko" path="res://Assets/Sprites/Bow-Sheet.png" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://hbjl8ofgw6ug" path="res://Assets/djartmusic-arrow-twang_01-306041.mp3" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sweqy"]
 radius = 48.0
@@ -49,3 +50,6 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Firing position" type="Node2D" parent="." unique_id=1166499230]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=562052287]
+stream = ExtResource("3_6t5aa")

@@ -12,19 +12,11 @@ func _process(delta: float) -> void:
 
 signal diamond_sword_hit
 
-#func _on_button_3_pressed() -> void:
-	#show()
-	#$".".play("default")
-	#Global.enemy_health = Global.enemy_health - 15
-	#await animation_finished
-	#hide()
-	#copper_sword_hit.emit()
-
-
 func _on_button_4_pressed() -> void:
 	show()
 	attacking = true
 	$".".play("default")
+	$AudioStreamPlayer2D.play()
 	Global.enemy_health = Global.enemy_health - (base_damage)
 	await animation_finished
 	hide()

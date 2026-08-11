@@ -3,6 +3,66 @@
 [ext_resource type="Script" uid="uid://b32js1dxgcbwu" path="res://Scripts/attack_question.gd" id="1_p4pt2"]
 [ext_resource type="Texture2D" uid="uid://o1ta6wcjvbkp" path="res://Assets/Sprites/Attack_bar-Sheet.png" id="2_xxp8l"]
 [ext_resource type="Texture2D" uid="uid://e77bpsrem2k2" path="res://Assets/Sprites/Attack_bar_juice.png" id="3_2db6i"]
+[ext_resource type="AudioStream" uid="uid://ckr347aagt1l" path="res://Assets/u_u4pf5h7zip-click-345983.mp3" id="3_t01j8"]
+[ext_resource type="Texture2D" uid="uid://csgh0mrjvg6un" path="res://Assets/Sprites/Attack_button-Sheet.png" id="4_gj442"]
+[ext_resource type="AudioStream" uid="uid://do65ma5w7a72d" path="res://Assets/dragon-studio-ding-sfx-472366.mp3" id="6_gcalj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12upn"]
+atlas = ExtResource("4_gj442")
+region = Rect2(0, 0, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbv2l"]
+atlas = ExtResource("4_gj442")
+region = Rect2(64, 0, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmd7a"]
+atlas = ExtResource("4_gj442")
+region = Rect2(128, 0, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwiv1"]
+atlas = ExtResource("4_gj442")
+region = Rect2(0, 20, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vhu1"]
+atlas = ExtResource("4_gj442")
+region = Rect2(64, 20, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipab4"]
+atlas = ExtResource("4_gj442")
+region = Rect2(128, 20, 64, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpsvb"]
+atlas = ExtResource("4_gj442")
+region = Rect2(0, 40, 64, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kah2"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_12upn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbv2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmd7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwiv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vhu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipab4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpsvb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2db6i"]
 atlas = ExtResource("2_xxp8l")
@@ -89,11 +149,20 @@ offset_right = 68.5
 offset_bottom = 31.0
 
 [node name="CheckButton" type="Button" parent="." unique_id=258134541]
-offset_top = -71.0
-offset_right = 58.0
-offset_bottom = -40.0
+offset_top = -65.0
+offset_right = 64.0
+offset_bottom = -45.0
 focus_mode = 0
-text = "Attack"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckButton" unique_id=276373817]
+texture_filter = 1
+position = Vector2(32, 10)
+sprite_frames = SubResource("SpriteFrames_3kah2")
+autoplay = "default"
+frame_progress = 0.79786706
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CheckButton" unique_id=2091113544]
+stream = ExtResource("3_t01j8")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=109766601]
 
@@ -116,5 +185,8 @@ value = 100.0
 texture_progress = ExtResource("3_2db6i")
 
 [node name="Attack icon" type="Sprite2D" parent="Node2D" unique_id=1118200888]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=181813991]
+stream = ExtResource("6_gcalj")
 
 [connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]

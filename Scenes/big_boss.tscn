@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bmnqkoypqg5oh" path="res://Scripts/big_boss.gd" id="1_wenfl"]
 [ext_resource type="Texture2D" uid="uid://bjhvu0xxegukl" path="res://Assets/Sprites/Phoenix-Sheet.png" id="2_da3ur"]
 [ext_resource type="Shader" uid="uid://psapb81quxhl" path="res://Scenes/big_boss.gdshader" id="2_g2jd8"]
+[ext_resource type="AudioStream" uid="uid://dtpvodwcwaaxf" path="res://Assets/djartmusic-short-fire-whoosh_1-317280.mp3" id="4_vkejo"]
+[ext_resource type="AudioStream" uid="uid://8kmmr8u5esbt" path="res://Assets/dragon-studio-crow-caw-with-echoing-reverb-472375.mp3" id="5_orhgc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
 radius = 141.0
@@ -225,5 +227,11 @@ frame_progress = 0.05648597
 
 [node name="Flash" type="AnimationPlayer" parent="." unique_id=1544403439]
 libraries/ = SubResource("AnimationLibrary_orhgc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=438759488]
+stream = ExtResource("4_vkejo")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=556939581]
+stream = ExtResource("5_orhgc")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

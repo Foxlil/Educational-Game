@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 
 signal two_arrows_attack_done
 func _on_button_2_pressed() -> void:
+	$AudioStreamPlayer2D.play()
 	global_position = Vector2(536.0, 468.0)
 	var attack_tween = create_tween().set_ignore_time_scale(true)
 	attack_tween.tween_property($".", "global_position", Vector2(159.0, -59.0), 1)

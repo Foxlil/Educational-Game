@@ -11,16 +11,28 @@
 [ext_resource type="PackedScene" uid="uid://c3ssc3imrj81r" path="res://Scenes/attack_question.tscn" id="9_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://c30ouc8ey1k68" path="res://Assets/Sprites/Tiger_player.png" id="10_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://dnlhepg263fqw" path="res://Scenes/player_attacks.tscn" id="11_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://cb3c40msk736k" path="res://Assets/Sprites/Arrow_icon.png" id="12_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://k6kh8en5nmlv" path="res://Assets/Sprites/Arrow.png" id="12_rfjv2"]
 [ext_resource type="Script" uid="uid://blqdr1srn2pt3" path="res://Scenes/basic_arrow_attack.gd" id="13_1phco"]
 [ext_resource type="PackedScene" uid="uid://clj2hcoq468kr" path="res://Scenes/two_arrows.tscn" id="14_1phco"]
+[ext_resource type="Texture2D" uid="uid://uylcjhk4idas" path="res://Assets/Sprites/Two_arrows_icon.png" id="15_22asu"]
+[ext_resource type="AudioStream" uid="uid://dl0dlp1dj23n8" path="res://Assets/dennish18-arrow-wood-impact-146418.mp3" id="15_cwurv"]
 [ext_resource type="Script" uid="uid://b2wcxi6cblkph" path="res://Scenes/two_arrows_2.gd" id="15_nb51f"]
 [ext_resource type="Texture2D" uid="uid://coxffjqdmdbi3" path="res://Assets/Sprites/Copper_sword-Sheet.png" id="16_nnt18"]
+[ext_resource type="AudioStream" uid="uid://ckr347aagt1l" path="res://Assets/u_u4pf5h7zip-click-345983.mp3" id="16_oeip8"]
 [ext_resource type="Script" uid="uid://d20h3veuc4sht" path="res://Scenes/copper_sword.gd" id="17_ewbju"]
 [ext_resource type="Script" uid="uid://ccqphw3s5rxvu" path="res://Scenes/sword.gd" id="18_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://darn7mq5nk5aq" path="res://Assets/Sprites/Copper_sword_icon.png" id="18_fkdbe"]
 [ext_resource type="Texture2D" uid="uid://b18biqq1ppfkx" path="res://Assets/Sprites/Diamond_sword-Sheet.png" id="18_iivbl"]
+[ext_resource type="AudioStream" uid="uid://b0oq760ylcoaf" path="res://Assets/dennish18-arrow-body-impact-146419.mp3" id="18_mucmn"]
 [ext_resource type="Script" uid="uid://bvo028byr0ci7" path="res://Scenes/steel_sword.gd" id="19_7nbq1"]
 [ext_resource type="Script" uid="uid://jro86dsaovnr" path="res://Scenes/area_2d.gd" id="21_exi56"]
+[ext_resource type="Texture2D" uid="uid://bt5sa30dmdq6r" path="res://Assets/Sprites/Diamond_sword_icon.png" id="22_81klo"]
+[ext_resource type="AudioStream" uid="uid://q0ie2rlqm0v" path="res://Assets/daviddumaisaudio-sword-slash-and-swing-185432.mp3" id="24_8m3t6"]
+[ext_resource type="Texture2D" uid="uid://bhn8e7c1onm5v" path="res://Assets/Sprites/Losing_screen.png" id="26_fkdbe"]
+[ext_resource type="Texture2D" uid="uid://c4t4jgnndrfs6" path="res://Assets/Sprites/Button.png" id="27_81klo"]
+[ext_resource type="Script" uid="uid://bq21hley3ehio" path="res://Scenes/you_lost_screen.gd" id="27_tgy6u"]
+[ext_resource type="AudioStream" uid="uid://ca7iggkpgskky" path="res://Assets/universfield-cinematic-impact-hit-352702.mp3" id="29_ese38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3vw4"]
 size = Vector2(782, 58)
@@ -155,6 +167,7 @@ animations = [{
 [node name="Game" type="Node2D" unique_id=1729311665]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=456561319]
+process_mode = 3
 position = Vector2(381, 215)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2.55, 2.55)
@@ -216,10 +229,12 @@ position = Vector2(389, 363)
 texture = ExtResource("10_ldgsr")
 
 [node name="Button" parent="." unique_id=2140821266 instance=ExtResource("11_o5yvi")]
+texture_filter = 1
 offset_left = 272.0
 offset_top = 394.0
-offset_right = 288.0
-offset_bottom = 410.0
+offset_right = 296.0
+offset_bottom = 418.0
+icon = ExtResource("12_7t8sx")
 index = 1
 time = 1.0
 
@@ -237,11 +252,16 @@ position = Vector2(2, 1.0000001)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_k3vw4")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button/Basic_arrow_attack" unique_id=1539906131]
+stream = ExtResource("15_cwurv")
+
 [node name="Button2" parent="." unique_id=370599766 instance=ExtResource("11_o5yvi")]
-offset_left = 251.0
+texture_filter = 1
+offset_left = 246.0
 offset_top = 394.0
-offset_right = 267.0
-offset_bottom = 410.0
+offset_right = 270.0
+offset_bottom = 418.0
+icon = ExtResource("15_22asu")
 index = 2
 time = 1.5
 
@@ -255,6 +275,9 @@ position = Vector2(2, 1.0000001)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_k3vw4")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button2/Two_arrows_1" unique_id=1936894310]
+stream = ExtResource("18_mucmn")
+
 [node name="Two_arrows_2" parent="Button2" unique_id=639708942 instance=ExtResource("14_1phco")]
 position = Vector2(14, 75)
 rotation = -0.7853982
@@ -267,20 +290,19 @@ position = Vector2(2, 1.0000001)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_k3vw4")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=2022017250]
-position = Vector2(268, 467)
-
 [node name="Button3" parent="." unique_id=1074884163 instance=ExtResource("11_o5yvi")]
-offset_left = 230.0
+texture_filter = 1
+offset_left = 220.0
 offset_top = 394.0
-offset_right = 246.0
-offset_bottom = 410.0
+offset_right = 244.0
+offset_bottom = 418.0
+icon = ExtResource("18_fkdbe")
 index = 3
 time = 2.0
 
 [node name="Copper sword" type="AnimatedSprite2D" parent="Button3" unique_id=253582784]
 texture_filter = 1
-position = Vector2(160, -55)
+position = Vector2(169, -55)
 sprite_frames = SubResource("SpriteFrames_k3vw4")
 frame = 6
 frame_progress = 1.0
@@ -293,17 +315,22 @@ script = ExtResource("18_7nbq1")
 position = Vector2(-2, -80.5)
 shape = SubResource("RectangleShape2D_x4qeh")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button3/Copper sword" unique_id=1650928526]
+stream = ExtResource("24_8m3t6")
+
 [node name="Button4" parent="." unique_id=1806557754 instance=ExtResource("11_o5yvi")]
-offset_left = 210.0
+texture_filter = 1
+offset_left = 194.0
 offset_top = 394.0
-offset_right = 226.0
-offset_bottom = 410.0
+offset_right = 218.0
+offset_bottom = 418.0
+icon = ExtResource("22_81klo")
 index = 4
 time = 5.0
 
 [node name="Diamond sword" type="AnimatedSprite2D" parent="Button4" unique_id=740456148]
 texture_filter = 1
-position = Vector2(180, -55)
+position = Vector2(195, -55)
 sprite_frames = SubResource("SpriteFrames_3kah2")
 frame = 6
 frame_progress = 1.0
@@ -316,6 +343,64 @@ script = ExtResource("21_exi56")
 position = Vector2(-2, -80.5)
 shape = SubResource("RectangleShape2D_x4qeh")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button4/Diamond sword" unique_id=23222775]
+stream = ExtResource("29_ese38")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2022017250]
+position = Vector2(479, 318)
+
+[node name="You_died_screen" type="Sprite2D" parent="." unique_id=1700978576]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
+z_index = 99
+texture_filter = 1
+position = Vector2(381, 216)
+texture = ExtResource("26_fkdbe")
+script = ExtResource("27_tgy6u")
+
+[node name="Label" type="Label" parent="You_died_screen" unique_id=1507440556]
+texture_filter = 2
+offset_left = -52.0
+offset_top = -107.0
+offset_right = 40.0
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 50
+text = "You"
+
+[node name="Label2" type="Label" parent="You_died_screen" unique_id=240675888]
+texture_filter = 2
+offset_left = -86.0
+offset_top = -54.0
+offset_right = 86.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 50
+text = "tried! :)"
+
+[node name="Button" type="Button" parent="You_died_screen" unique_id=1973264931]
+process_mode = 3
+z_index = 1000
+texture_filter = 1
+offset_left = -55.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 62.0
+icon = ExtResource("27_81klo")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="You_died_screen/Button" unique_id=396720650]
+texture_filter = 2
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 38.0
+text = "Try again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="You_died_screen/Button" unique_id=505732387]
+stream = ExtResource("16_oeip8")
+
 [connection signal="pressed" from="Button" to="Button/Basic_arrow_attack" method="_on_button_pressed"]
 [connection signal="player_attack_done" from="Button/Basic_arrow_attack" to="Button" method="_on_basic_arrow_attack_player_attack_done"]
 [connection signal="pressed" from="Button2" to="Button2/Two_arrows_1" method="_on_button_2_pressed"]
@@ -325,3 +410,4 @@ shape = SubResource("RectangleShape2D_x4qeh")
 [connection signal="copper_sword_hit" from="Button3/Copper sword" to="Button3" method="_on_copper_sword_copper_sword_hit"]
 [connection signal="pressed" from="Button4" to="Button4/Diamond sword" method="_on_button_4_pressed"]
 [connection signal="diamond_sword_hit" from="Button4/Diamond sword" to="Button4" method="_on_diamond_sword_diamond_sword_hit"]
+[connection signal="pressed" from="You_died_screen/Button" to="You_died_screen" method="_on_button_pressed"]

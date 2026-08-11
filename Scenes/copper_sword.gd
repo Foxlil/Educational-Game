@@ -16,6 +16,7 @@ func _on_button_3_pressed() -> void:
 	show()
 	attacking = true
 	$".".play("default")
+	$AudioStreamPlayer2D.play()
 	Global.enemy_health = Global.enemy_health - (base_damage)
 	await animation_finished
 	hide()

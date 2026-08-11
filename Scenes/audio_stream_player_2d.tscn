@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nef6fwhkhv0d"]
+
+[ext_resource type="AudioStream" uid="uid://b8bdcxtun3ps7" path="res://Assets/tunetank-china-chinese-epic-music-348422.mp3" id="1_kajln"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=422191422]
+stream = ExtResource("1_kajln")
+volume_db = -20.0
+autoplay = true
