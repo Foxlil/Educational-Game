@@ -38,10 +38,10 @@
 size = Vector2(782, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kah2"]
-size = Vector2(784, 39)
+size = Vector2(784, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65kyx"]
-size = Vector2(784, 157.5)
+size = Vector2(784, 123)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3vw4"]
 radius = 4.0
@@ -210,14 +210,14 @@ shape = SubResource("RectangleShape2D_k3vw4")
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slow" unique_id=461282645]
-position = Vector2(381, 257.5)
+position = Vector2(381, 275)
 shape = SubResource("RectangleShape2D_3kah2")
 
 [node name="Fast 2" type="Area2D" parent="." unique_id=1423695718 groups=["Fast"]]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fast 2" unique_id=509124237]
-position = Vector2(381, 356.25)
+position = Vector2(381, 373.5)
 shape = SubResource("RectangleShape2D_65kyx")
 
 [node name="attack_question" parent="." unique_id=1693156891 instance=ExtResource("9_h4fw4")]
