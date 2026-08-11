@@ -1,2 +1,2 @@
 # Educational-Game
-I recently was given the opportunity to teach Chinese students English! Here is an attempt to create either/both a tile-based and platforming game that teaches English. 
+A boss fight shooter that quizzes the user on kindergarten-level spelling questions. 
