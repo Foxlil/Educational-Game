@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 		$TextureProgressBar.value = 100
 
 func _on_pressed() -> void:
+	print(Global.number_of_times)
 	if Global.what_available.has(index):
 		times_clicked = times_clicked + 1
 	if times_clicked == Global.number_of_times:

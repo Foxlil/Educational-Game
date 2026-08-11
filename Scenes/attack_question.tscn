@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3ssc3imrj81r"]
 
 [ext_resource type="Script" uid="uid://b32js1dxgcbwu" path="res://Scripts/attack_question.gd" id="1_p4pt2"]
+[ext_resource type="FontFile" uid="uid://cxxvxjvl6nqg6" path="res://Assets/Roboto-VariableFont_wdth,wght.ttf" id="2_xa6bx"]
 [ext_resource type="Texture2D" uid="uid://o1ta6wcjvbkp" path="res://Assets/Sprites/Attack_bar-Sheet.png" id="2_xxp8l"]
 [ext_resource type="Texture2D" uid="uid://e77bpsrem2k2" path="res://Assets/Sprites/Attack_bar_juice.png" id="3_2db6i"]
 [ext_resource type="AudioStream" uid="uid://ckr347aagt1l" path="res://Assets/u_u4pf5h7zip-click-345983.mp3" id="3_t01j8"]
@@ -142,6 +143,7 @@ script = ExtResource("1_p4pt2")
 offset_top = -31.0
 offset_right = 63.0
 offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("2_xa6bx")
 text = "Hi there"
 
 [node name="Input" type="LineEdit" parent="." unique_id=708522349]
